@@ -88,7 +88,11 @@ function getLastElement(arr){
 // should return the new combined array.
 
 function combineArrays(arr1, arr2){
-    const newarr = arr1.concat(arr2);
+    const a1 = arr1.split(",");
+    console.log(a1);
+    const a2 = arr2.split(",");
+    console.log(a2);
+    const newarr = a1.concat(a2);
     return newarr;
 }
 
@@ -117,8 +121,8 @@ function isPalindrome(str){
 let num =  prompt("num");
 let startNum = prompt("startnum");
 let endNum = prompt("endnum");
-const arr1 = [prompt("arr1")];
-const arr2 = [prompt("arr2")];
+const arr1 = prompt("arr1");
+const arr2 = prompt("arr2");
 let str = prompt("str");
 
 // Print code to index.html
