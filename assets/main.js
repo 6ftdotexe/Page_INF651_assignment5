@@ -107,7 +107,11 @@ function combineArrays(arr1, arr2){
 // help forums there if you get stuck!
 
 function isPalindrome(str){
-    //return () ? true : false;
+    // str = "taco cat" --> tacocat --> tacocat --> true
+    //str "ariana grande" --> arianagrande --> ednarganaira --> false
+    str = str.replace(" ", "");
+    let reversed = str.split("").reverse().join("");
+    return (str == reversed) ? true : false;
 }
 
 let num =  prompt("num");
@@ -115,12 +119,23 @@ let startNum = prompt("startnum");
 let endNum = prompt("endnum");
 const arr1 = [prompt("arr1")];
 const arr2 = [prompt("arr2")];
+let str = prompt("str");
 
-console.log(getPizzaType(myPizzaOrder));
-console.log(addTax(myPizzaOrder));
-console.log(completeOrder(myPizzaOrder));
-console.log(allTheNumbers(num));
-console.log(getEvens(startNum, endNum));
-console.log(getLastElement(myPizzaOrder));
-console.log(combineArrays(arr1, arr2));
-//console.log(isPalindrome(str));
+// Print code to index.html
+
+var q1 = getPizzaType(myPizzaOrder);
+var q2 = addTax(myPizzaOrder);
+var q3 = completeOrder(myPizzaOrder);
+var q4 = allTheNumbers(num);
+var q5 = getEvens(startNum, endNum);
+var q6 = getLastElement(myPizzaOrder);
+var q7 = combineArrays(arr1, arr2);
+var q8 = isPalindrome(str);
+
+const questions = [q1, q2, q3, q4, q5, q6, q7, q8];
+let text = ""
+for (let j = 1; j <= questions.length; j++){
+    console.log (j + ". " + questions[j-1] + "\n");
+    text += j + ". " + questions[j-1] + "<br>";
+}
+document.getElementById("text").innerHTML = text;
